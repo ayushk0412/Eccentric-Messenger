@@ -126,62 +126,8 @@ public class ChatClient extends JFrame implements Runnable{
 
 	
 	});
-    
-    socket = new Socket("localhost",1234);
-    
-    din = new DataInputStream(socket.getInputStream());
-     dout = new DataOutputStream(socket.getOutputStream());
-     
-     dout.writeUTF(LogInName);
-     dout.writeUTF(LogInName+" "+"LOGIN");
-     
-     thread = new Thread(this);
-     thread.start();
-     setup();
-    }
-    
-    @Override
-    public void run() {
-       while(true){
-           try {
-               ta.append("\n"+din.readUTF());
-           } catch (IOException ex) {
-               Logger.getLogger(ChatClient.class.getName()).log(Level.SEVERE, null, ex);
-           }
-       }
-    }
 
-    private void setup() {
-    	JFrame f = new JFrame("Eccentric Messenger");
-    	
-        
-        
-        setSize(570,550);
-        JPanel panel = new JPanel();
-        
-        panel.setPreferredSize(new Dimension(320, 500));
-        panel.add(new JScrollPane(ta));
-        panel.add(tf);
-        panel.add(send);
-        panel.add(logout);
-        panel.setBackground(Color.BLACK);
-        Border border1 = BorderFactory.createLineBorder(new Color(250, 176, 2), 4);
-        panel.setBorder(border1);
-        
-       
-        
-        
-        f.add(panel);
-        f.setSize(570,550);
-        f.setVisible(true);
-        
-        
-        ta.setForeground(new Color(250, 176, 2));
-        
-    
-         
-        
-    }
+	    //TO GET THE FULL CODE, SEND ME A MAIL AT ayushk0412@gmail.com, WITH THE SUBJECT "CODE REQUIRED"
 
 
     
